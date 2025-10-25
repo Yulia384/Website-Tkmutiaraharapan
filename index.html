@@ -10,17 +10,30 @@
       font-family: 'Poppins', sans-serif;
       background-color: #fdfdfd;
       color: #333;
-      scroll-behavior: smooth;
     }
     header {
-      background: linear-gradient(90deg, #00b4d8, #48cae4);
+      background: url('https://images.unsplash.com/photo-1503457574464-6e0b0a4a1f2a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 100px 20px;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
     header h1 {
-      font-size: 2.7rem;
+      font-size: 3rem;
       font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
     }
     nav {
       background-color: #0077b6;
@@ -28,34 +41,20 @@
     nav a {
       color: white !important;
       font-weight: 500;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #caf0f8 !important;
     }
     section {
       padding: 60px 20px;
     }
     .about img {
-      border-radius: 15px;
+      border-radius: 20px;
       width: 100%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .mini-gallery img {
-      border-radius: 10px;
-      margin: 10px;
-      width: 30%;
-      transition: transform 0.3s ease;
-    }
-    .mini-gallery img:hover {
-      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     footer {
       background-color: #0077b6;
       color: white;
       text-align: center;
       padding: 20px 0;
-      margin-top: 30px;
     }
   </style>
 </head>
@@ -68,9 +67,9 @@
   </header>
 
   <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand text-white" href="#">🏫 TK Mutiara Harapan</a>
+      <a class="navbar-brand" href="#">🏫 TK Mutiara Harapan</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -85,44 +84,36 @@
     </div>
   </nav>
 
-  <!-- TENTANG SEKOLAH -->
+  <!-- ABOUT SECTION -->
   <section id="tentang" class="about container">
     <div class="row align-items-center">
-      <div class="col-md-6">
-        <img src="https://cdn.pixabay.com/photo/2017/02/05/00/51/children-2032648_1280.jpg" alt="Anak-anak TK Mutiara Harapan">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="https://plus.unsplash.com/premium_photo-1681842143575-03bf1be4c11c?auto=format&fit=crop&w=800&q=80" 
+             alt="Kegiatan belajar anak-anak TK Mutiara Harapan">
       </div>
       <div class="col-md-6">
-        <h2 class="mb-3">Tentang Sekolah</h2>
+        <h2>Tentang Sekolah</h2>
         <p>
-          <strong>TK MUTIARA HARAPAN</strong> merupakan lembaga pendidikan anak usia dini yang berdiri di bawah naungan 
+          <strong>TK MUTIARA HARAPAN</strong> merupakan lembaga pendidikan anak usia dini di bawah naungan 
           <strong>Yayasan Pendidikan Karya Anak Bangsa Tanjung Medan</strong>.  
-          Kami menghadirkan suasana belajar yang menyenangkan dan mendukung perkembangan karakter, kecerdasan, serta kreativitas anak.
-        </p>
-        <p>
-          Dengan tenaga pendidik profesional dan kegiatan yang interaktif, anak-anak diajak untuk belajar melalui bermain, bernyanyi, bereksperimen, dan berkreasi.
-          Kami percaya bahwa setiap anak adalah mutiara berharga yang perlu diasah dengan cinta dan pendidikan yang tepat.
+          Kami berkomitmen untuk menciptakan lingkungan belajar yang menyenangkan, aman, dan mendidik — 
+          membantu anak mengembangkan potensi, kreativitas, dan karakter sejak dini melalui kegiatan belajar 
+          berbasis bermain dan eksplorasi.
         </p>
       </div>
-    </div>
-
-    <!-- Mini Gallery -->
-    <div class="text-center mt-4 mini-gallery">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/05/08/children-1869265_1280.jpg" alt="Kegiatan belajar anak">
-      <img src="https://cdn.pixabay.com/photo/2016/03/27/21/55/kindergarten-1284360_1280.jpg" alt="Anak bermain bersama">
-      <img src="https://cdn.pixabay.com/photo/2017/02/16/19/20/children-2079901_1280.jpg" alt="Belajar sambil bermain">
     </div>
   </section>
 
   <!-- VISI & MISI -->
-  <section id="visi" class="bg-light">
-    <div class="container text-center">
+  <section id="visi" class="bg-light text-center">
+    <div class="container">
       <h2>Visi & Misi</h2>
       <p><strong>Visi:</strong> Menjadi TK unggulan yang membentuk anak berkarakter, cerdas, dan beriman.</p>
       <p><strong>Misi:</strong></p>
       <ul class="list-unstyled">
-        <li>🌱 Menanamkan nilai moral dan spiritual sejak dini.</li>
-        <li>🎨 Mengembangkan kreativitas anak dengan kegiatan menyenangkan.</li>
-        <li>🤝 Membangun kolaborasi antara guru dan orang tua.</li>
+        <li>🌱 Menumbuhkan nilai-nilai moral dan spiritual sejak dini.</li>
+        <li>🎨 Mengembangkan kreativitas melalui kegiatan aktif dan menyenangkan.</li>
+        <li>🤝 Membangun kerja sama dengan orang tua dalam pembelajaran anak.</li>
       </ul>
     </div>
   </section>
@@ -131,9 +122,18 @@
   <section id="galeri" class="container text-center">
     <h2>Galeri Kegiatan</h2>
     <div class="row mt-4">
-      <div class="col-md-4 mb-3"><img src="https://cdn.pixabay.com/photo/2016/02/20/18/03/children-1218329_640.jpg" class="img-fluid rounded shadow"></div>
-      <div class="col-md-4 mb-3"><img src="https://cdn.pixabay.com/photo/2016/03/27/22/22/children-1284361_640.jpg" class="img-fluid rounded shadow"></div>
-      <div class="col-md-4 mb-3"><img src="https://cdn.pixabay.com/photo/2016/03/27/21/55/kindergarten-1284360_640.jpg" class="img-fluid rounded shadow"></div>
+      <div class="col-md-4 mb-3">
+        <img src="https://images.unsplash.com/photo-1600880292089-90e9a4d7a9a4?auto=format&fit=crop&w=800&q=80" 
+             class="img-fluid rounded shadow" alt="Anak-anak belajar bersama guru">
+      </div>
+      <div class="col-md-4 mb-3">
+        <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d4f?auto=format&fit=crop&w=800&q=80" 
+             class="img-fluid rounded shadow" alt="Anak bermain dan belajar bersama">
+      </div>
+      <div class="col-md-4 mb-3">
+        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80" 
+             class="img-fluid rounded shadow" alt="Suasana belajar anak-anak TK">
+      </div>
     </div>
   </section>
 
@@ -151,6 +151,7 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2025 TK MUTIARA HARAPAN | Designed by Yulia Permai br. Sihombing, M.Pd</p>
+    <small>Photos from Unsplash & Pixabay (bebas hak cipta)</small>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
